@@ -6,7 +6,7 @@
 /*   By: samuele <samuele@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 22:18:05 by samuele           #+#    #+#             */
-/*   Updated: 2024/11/27 22:19:46 by samuele          ###   ########.fr       */
+/*   Updated: 2024/11/29 23:25:27 by samuele          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ Dog::Dog()
     _type = "Dog";
 }
 
-Dog::Dog(Dog const &copy)
+Dog::Dog(Dog const &copy) : Animal(copy)
 {
     std::cout << "Dog copy constructor called" << std::endl;
-    *this = copy;
 }
 
 Dog::~Dog()

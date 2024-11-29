@@ -6,7 +6,7 @@
 /*   By: samuele <samuele@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 12:03:43 by samuele           #+#    #+#             */
-/*   Updated: 2024/11/28 14:03:59 by samuele          ###   ########.fr       */
+/*   Updated: 2024/11/29 23:24:25 by samuele          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ Character::Character()
 {
     std::cout << "Character default constructor" << std::endl;
     for (int i = 0; i < 4; i++)
-        _inventory[i] = nullptr;
+        _inventory[i] = NULL;
 }
 
 Character::Character(const std::string &name) : _name(name)
 {
     std::cout << "Character parameter constructor" << std::endl;
     for (int i = 0; i < 4; i++)
-        _inventory[i] = nullptr;
+        _inventory[i] = NULL;
 }
 
 Character::Character(const Character &copy)
@@ -37,7 +37,7 @@ Character::~Character()
     std::cout << "Character destructor" << std::endl;
     for (int i = 0; i < 4; i++)
     {
-        if (_inventory[i] != nullptr)
+        if (_inventory[i] != NULL)
             delete _inventory[i];
     }
 }
@@ -46,10 +46,10 @@ Character &Character::operator=(const Character &copy)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (_inventory[i] != nullptr)
+        if (_inventory[i] != NULL)
         {
             delete _inventory[i];
-            _inventory[i] = nullptr;
+            _inventory[i] = NULL;
         }
         if (copy._inventory[i])
             _inventory[i] = copy._inventory[i]->clone();
@@ -67,7 +67,7 @@ void Character::equip(AMateria *m)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (_inventory[i] == nullptr)
+        if (_inventory[i] == NULL)
         {
             _inventory[i] = m;
             std::cout << "Equipped " << m->getType() << " to " << _name << std::endl;
@@ -82,7 +82,7 @@ void Character::unequip(int idx)
     if (idx >= 0 && idx < 4 && _inventory[idx])
     {
         std::cout << "Unequipped " << _inventory[idx]->getType() << " from " << _name << std::endl;
-        _inventory[idx] = nullptr;
+        _inventory[idx] = NULL;
     }
     else
         std::cout << "There is no materia in this slot" << std::endl;

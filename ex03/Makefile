@@ -26,7 +26,7 @@ CC = c++
 all: $(NAME)
 
 $(NAME): $(SRC)
-	@$(CC) $(SRC) -o $(NAME)
+	@$(CC) $(SRC) -o $(NAME) $(FLAGS)
 	@echo "\e[0;93m[$(NAME)] compiled!\e[0m"
 
 clean:

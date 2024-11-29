@@ -6,7 +6,7 @@
 /*   By: samuele <samuele@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 22:12:29 by samuele           #+#    #+#             */
-/*   Updated: 2024/11/27 23:42:28 by samuele          ###   ########.fr       */
+/*   Updated: 2024/11/29 23:26:09 by samuele          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ Cat::Cat()
     _brain = new Brain();
 }
 
-Cat::Cat(Cat const &copy)
+Cat::Cat(Cat const &copy) : Animal(copy)
 {
     std::cout << "Cat copy constructor called" << std::endl;
-    _type = copy._type;
     _brain = new Brain(*copy._brain);
 }
 
